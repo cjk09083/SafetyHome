@@ -55,7 +55,7 @@
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-7%20공유된%20사진%20확인.jpeg" width="23%"/>
 </div></br>
 
- - 영상 통화 및 녹화
+ - 영상 통화 및 촬영
 <div align="center">
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/10.%20촬영모드%20-%20메인.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
