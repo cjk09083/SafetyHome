@@ -8,8 +8,13 @@
 
 
 ## 안전한나라 (Android, WebRTC)
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/1.%20메인.jpeg" width="30%"/>
+</div></br>
 
 ## 목적
+1. 
+2. 
 
 ## 담당
 - Android(JAVA) 프론트/백엔드 개발
@@ -19,9 +24,20 @@
 - GPS 위치 공유
 
 ## 기능
-### 1. 
- - 농장에서 측정한 각종 센서(온습도, 광량, 이산화탄소) 정보를 서버에 업로드
- - 전용 어플리케이션(Android)에서 이를 모니터링
+### 1. 로그인 관련
+ - 약관 동의 후 회원가입 및 로그인 
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/6.%20회원가입%20-%20약관동의.png" width="20%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/8.%20회원가입%20-%20정보%20입력.png" width="20%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/9.%20회원가입%20-%20완료.png" width="20%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/2.%20로그인.png" width="20%"/>
+</div></br>
+
+ - 아이디 찾기 & 비밀번호 찾기 (문자 전송)
+ 
 <div align="center">
 <img src="https://github.com/cjk09083/SmartFarm/blob/main/%EC%82%AC%EC%A7%84%20%EB%B0%8F%20%EC%98%81%EC%83%81/%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98%20%EB%A9%94%EC%9D%B8%ED%99%94%EB%A9%B4.jpg" width="30%"/>
    &nbsp;&nbsp;&nbsp;
