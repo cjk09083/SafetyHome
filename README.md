@@ -48,44 +48,44 @@
 <div align="center">
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/10.%20촬영모드%20-%20메인.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-2%20문자%20전송(입력)" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-2%20문자%20전송(입력).png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-3%20사진&문자&위치%20알람" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-3%20사진&문자&위치%20알람.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-7%20공유된%20사진%20확인" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-7%20공유된%20사진%20확인.png" width="23%"/>
 </div></br>
 
  - 영상 통화 및 녹화
 <div align="center">
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/10.%20촬영모드%20-%20메인.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-4%20영상%20통화%20화면" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-4%20영상%20통화%20화면.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-2%20영상%20공유%20알림" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-2%20영상%20공유%20알림.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-6%20녹화된%20영상%20확인" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-6%20녹화된%20영상%20확인.png" width="23%"/>
 </div></br>
 
 ### 4. 사이드바
 - 회원정보 & 수신인 변경
 <div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-1%20회원정보%20변경%20(상단)" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-1%20회원정보%20변경%20(상단).png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-2%20회원정보%20변경%20(하단)" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-2%20회원정보%20변경%20(하단).png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-3%20수신인%20신규%20등록" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-3%20수신인%20신규%20등록.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-4%20수신인%20정보%20변경" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-4%20수신인%20정보%20변경.png" width="23%"/>
 </div></br>
 
 ### 5. 설정
 - 촬영모드 & 위치모드 설정
 <div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/49%20촬영모드%20 설정" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/49%20촬영모드%20설정.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/50%20촬영모드%20설정(GPS)" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/50%20촬영모드%20설정(GPS).png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/51%20위치모드%20설정" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/51%20위치모드%20설정.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/52%20위치모드%20설정(GPS)" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/52%20위치모드%20설정(GPS).png" width="23%"/>
 </div></br>
