@@ -11,7 +11,7 @@
 
 ## 목적
 
-## 담당 (1인 개발)
+## 담당
 - Android(JAVA) 프론트/백엔드 개발
 - WebRTC (Kakao I connect) 영상통화 및 녹화 기능
 - Firebase Cloud Messaging (FCM) 활용
