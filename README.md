@@ -27,7 +27,7 @@
 ## 기능
 ### 1. 로그인 관련
  - 약관 동의 후 회원가입 및 로그인
-<div align="center"  style="background-color:rgba(0, 255, 0, 0.3)">
+<div align="center" >
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/6.%20회원가입%20-%20약관동의.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/8.%20회원가입%20-%20정보%20입력.png" width="23%"/>
