@@ -44,7 +44,7 @@
 </div></br>
 
 ### 2. 촬영모드
- - 사진&문자 공유
+ - 사진&문자 전송
 <div align="center">
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/10.%20촬영모드%20-%20메인.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
