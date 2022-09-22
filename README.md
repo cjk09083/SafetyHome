@@ -32,8 +32,6 @@
 &nbsp;&nbsp;&nbsp;
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/8.%20회원가입%20-%20정보%20입력.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/9.%20회원가입%20-%20완료.png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/2.%20로그인.png" width="23%"/>
 </div></br>
 
