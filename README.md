@@ -34,12 +34,13 @@
 </div></br>
 
  - 아이디 찾기 & 비밀번호 찾기
+ <!--
 <div align="center">
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/3.%20아이디찾기.png" width="25%"/>
 &nbsp;&nbsp;&nbsp;
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/4.%20비밀번호%20찾기.png" width="25%"/>
 </div></br>
-
+-->
 ### 2. 촬영모드
  - 사진&문자 전송 (메인, 문자입력, 상단알람, 사진확인)
 <div align="center">
