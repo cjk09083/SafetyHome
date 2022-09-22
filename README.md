@@ -19,6 +19,7 @@
 - Firebase Cloud Messaging (FCM) & MMS 알림
 - 녹화된 영상 및 음성 편집&합성 (FFmpeg)
 - GPS 위치 공유 (좌표 <-> 주소 변환)
+- 저장된 데이터 서버와 공유
 
 ## 기능
 ### 1. 로그인 관련
