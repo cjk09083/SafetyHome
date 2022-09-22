@@ -46,7 +46,7 @@
 ### 2. 촬영모드
  - 사진&문자 공유
 <div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/10.%20촬영모드%20-%20메인.jpeg" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/10.%20촬영모드%20-%20메인.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-2%20문자%20전송(입력).jpeg" width="23%"/>
 &nbsp;&nbsp;&nbsp;
@@ -57,7 +57,7 @@
 
  - 영상 통화 및 녹화
 <div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/10.%20촬영모드%20-%20메인.jpeg" width="23%"/>
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/10.%20촬영모드%20-%20메인.png" width="23%"/>
 &nbsp;&nbsp;&nbsp;
 <img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-4%20영상%20통화%20화면.jpeg" width="23%"/>
 &nbsp;&nbsp;&nbsp;
