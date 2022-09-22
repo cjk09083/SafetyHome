@@ -16,7 +16,7 @@
 ## 담당
 - Android(JAVA) 프론트/백엔드 개발
 - WebRTC (Kakao I connect) 영상통화 및 녹화 기능
-- Firebase Cloud Messaging (FCM) 활용
+- Firebase Cloud Messaging (FCM) & MMS 알림
 - 녹화된 영상 및 음성 편집&합성 (FFmpeg)
 - GPS 위치 공유 (좌표 <-> 주소 변환)
 
