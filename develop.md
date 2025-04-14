@@ -72,8 +72,6 @@ MyFirebaseMessagingService
    └── 수신자 앱 → 푸시 알림 수신 → Notification 표시
 ```
 
-위 연계 구조는 실제 Activity와 Fragment 흐름에 맞춰 설계되었으며, 사용자가 앱을 시작해 긴급상황을 알릴 때까지의 전체 흐름을 포함합니다.
-
 ---
 
 ## ⚙️ 개발 방식
@@ -87,7 +85,7 @@ MyFirebaseMessagingService
 | **탭 구성 방식** | BottomNavigationView (`activity_main.xml`) | Camera, VideoCall, Location 탭으로 구성 |
 | **사이드메뉴** | DrawerLayout + NavigationView | 수신자 설정, 개인정보 진입 |
 | **알림 방식** | `FirebaseMessagingService` 상속 | `onMessageReceived()` override |
-| **영상 처리** | `Camera Intent` + WebRTC + FFmpeg | 영상 통화 후 `onPeerLeft()`에서 자동 저장 |
+| **영상 처리** | `Camera Intent`, `WebRTC`, `FFmpeg` | 통화 후 WebRTC 영상 자동 저장, FFmpeg로 음성 병합 |
 | **음성 녹음** | `MediaRecorder` → `.m4a` 저장 | `startRecording()`, `stopRecording()` 직접 구현 |
 | **파일 업로드** | `HttpURLConnection` + POST multipart | 서버 업로드 후 응답 처리 |
 | **위치 수신** | `LocationManager` + `Geocoder` | 실시간 위치와 주소 표시 |
@@ -104,52 +102,44 @@ MyFirebaseMessagingService
 ### 2. 로그인 및 회원가입 구현
 - `LoginActivity.java`, `SignupActivity.java` 작성
 - `SharedPreferences`로 자동 로그인 상태 유지
-- Retrofit 없이 간단한 로그인 로직 (FirebaseAuth 연동 가능)
 
 ### 3. 탭 레이아웃 및 프래그먼트 연결
-- `activity_main.xml` 내 `BottomNavigationView` 선언
-- `MainActivity.java` → `replaceFragment()` 함수로 각 프래그먼트 연결
-
-```java
-private void replaceFragment(Fragment fragment) {
-    getSupportFragmentManager().beginTransaction()
-        .replace(R.id.main_frame, fragment)
-        .commit();
-}
-```
+- `activity_main.xml`에 `BottomNavigationView` 설정
+- `MainActivity.java`에서 `replaceFragment()`로 프래그먼트 전환
 
 ### 4. 촬영 모드 (CameraFragment)
-- 사진 촬영: `Intent(MediaStore.ACTION_IMAGE_CAPTURE)`
-- 영상 통화: `VideoCallFragment` + Kakao I WebRTC SDK
-- 영상 녹화: WebRTC 종료 시 저장 (`onPeerLeft()` 내부)
-- 영상 업로드: `UploadService.java`에서 파일 전송
+- `Intent(MediaStore.ACTION_IMAGE_CAPTURE)`로 사진 촬영
+- 저장된 사진은 `UploadService`를 통해 서버 전송
 
-### 5. 위치 모드 (LocationFragment)
-- `LocationManager.requestLocationUpdates()`로 실시간 GPS 수신
-- `Geocoder`로 주소 텍스트 변환
-- `MediaRecorder`로 음성 녹음 `.m4a` 생성
-- `Intent.ACTION_CALL`로 긴급 번호 연결
+### 5. 영상 통화 모드 (VideoCallFragment)
+- Kakao WebRTC SDK로 영상통화 기능 구현
+- 통화 종료 시 `onPeerLeft()`에서 영상 자동 저장
+- 저장된 영상은 내부 `/Movies/safety_call.mp4` 위치에 저장됨
 
-### 6. 사이드 메뉴 및 설정 페이지
-- `NavigationView`로 메뉴 전환
-- 수신인 추가/삭제 기능 → SQLite or JSON 저장
-- 설정화면: `SettingsActivity`에서 SwitchCompat로 모드 설정 저장
+### 6. 음성 녹음 및 병합 처리
+- `MediaRecorder`로 `.m4a` 녹음 (`recording_audio.m4a`)
+- 통화 종료 시 `Mobile-FFmpeg.execute(...)` 로 영상+음성 병합:
 
-### 7. 알림 처리 (FCMService)
-- `MyFirebaseMessagingService` extends `FirebaseMessagingService`
-- `onMessageReceived()`에서 알림 도착 시 Notification 출력
-- 백그라운드 수신 및 디바이스별 토큰 저장
+```java
+String cmd = "-i safety_call.mp4 -i recording_audio.m4a -c:v copy -c:a aac output_merged.mp4";
+int rc = FFmpeg.execute(cmd);
+```
 
-### 8. 테스트 및 배포
-- Android 10 이상 디바이스로 실기기 테스트
-- 네트워크 지연 상황에서 영상/음성/위치 전송 시나리오별 QA
-- APK 파일 내장 서명 후 배포 (ADB push, 내부 웹 배포 가능)
+- `output_merged.mp4`를 업로드 대상으로 전환
 
+### 7. 위치 모드 (LocationFragment)
+- 실시간 위치 수신 → `LocationManager.requestLocationUpdates()`
+- `Geocoder`로 주소 표시 → `getFromLocation()`
+- 긴급전화: `Intent.ACTION_CALL` 실행
 
+### 8. 알림 및 전송
+- `MyFirebaseMessagingService`에서 `onMessageReceived()` 처리
+- 영상/위치 전송 후 FCM 알림 또는 MMS 발송
 
-
-
-
+### 9. 테스트 및 배포
+- Android 10 이상 실기기 다수 테스트
+- FFmpeg 병합 후 영상/음성 싱크 확인
+- `adb install` 또는 내부 배포 사이트로 APK 전달
 
 ---
 
