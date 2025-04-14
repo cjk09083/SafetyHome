@@ -90,13 +90,94 @@
 - Play Store 등록은 기획과 일정 논의 후 결정
 
 ---
+## 🚀 작업 결과물
+### 1. 로그인 관련
+ - 회원가입 및 로그인
+<div align="center" >
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/1.%20메인.jpeg" width="20%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/6.%20회원가입%20-%20약관동의.png" width="20%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/8.%20회원가입%20-%20정보%20입력.png" width="20%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/2.%20로그인.png" width="20%"/>
+</div></br>
 
-## 🚀 작업 스타일 공유
+ - 아이디 찾기 & 비밀번호 찾기
+ <!--
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/3.%20아이디찾기.png" width="25%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/4.%20비밀번호%20찾기.png" width="25%"/>
+</div></br>
+-->
+### 2. 촬영모드
+ - 사진&문자 전송 (메인, 문자입력, 상단알람, 사진확인)
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/10.%20촬영모드%20-%20메인.png" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-2%20문자%20전송(입력).jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-3%20사진&문자&위치%20알람.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-7%20공유된%20사진%20확인.jpeg" width="23%"/>
+</div></br>
 
-| 역할 | 스타일 |
-|------|--------|
-| 기획자 | 기능보다 **흐름** 중심. 사용자가 최대한 빠르게 상황을 전달할 수 있도록 구성 |
-| 디자이너 | **가시성 + 직관성** 우선. 상황별 버튼/색상/문구에 의미 부여 |
-| 개발자 | **화면별 분리**를 기반으로 기능을 독립적으로 구성하고 자동화 중심 개발 |
-| 공통 | 반복 테스트를 통해 불필요한 절차 제거, 실제 위급한 상황에서도 사용 가능해야 함 |
+ - 영상 통화 및 촬영 (메인, 영상통화, 상단알람, 영상확인)
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/10.%20촬영모드%20-%20메인.png" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-4%20영상%20통화%20화면.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-2%20영상%20공유%20알림.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-6%20녹화된%20영상%20확인.jpeg" width="23%"/>
+</div></br>
 
+### 3. 위치모드
+- 사진 & 위치 전송
+- 음성녹음 
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/19.%20위치모드.png" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-3%20음성%20녹음.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-4%20음성%20전송.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-6%20음성%20확인.jpeg" width="23%"/>
+</div></br>
+
+- 긴급전화
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/19.%20위치모드.png" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-8%20긴급%20전화연결.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-9%20긴급%20전화연결%20호출중.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-10%20긴급%20전화연결중.jpeg" width="23%"/>
+</div></br>
+
+### 4. 사이드
+- 회원정보 & 수신인 변경 : 회원정보변경(상단,하단), 수신인 (신규등록, 정보변경)
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-1%20회원정보%20변경%20(상단).jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-2%20회원정보%20변경%20(하단).jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-3%20수신인%20신규%20등록.jpeg" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-4%20수신인%20정보%20변경.jpeg" width="23%"/>
+</div></br>
+
+### 5. 설정
+- 촬영모드 & 위치모드 설정 : 촬영모드 설정(일반, GPS), 위치모드 설정(일반, GPS) 
+<div align="center">
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/49%20촬영모드%20설정.png" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/50%20촬영모드%20설정(GPS).png" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/51%20위치모드%20설정.png" width="23%"/>
+&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/52%20위치모드%20설정(GPS).png" width="23%"/>
+</div></br>
