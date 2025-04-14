@@ -18,7 +18,7 @@
 ### ⚙️ 작업 환경
 - 개발 툴: Android Studio (Java 기반)
 - 운영체제: Android OS 10 이상 권장
-- 화면 설계 도구: Figma, PPT 스케치
+- 화면 설계 도구: Photoshop, PPT 스케치
 - 버전 관리: GitHub 사용, main 브랜치 기준 협업
 - 앱 구조: 화면 단위 기능 모듈 설계
 
