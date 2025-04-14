@@ -12,17 +12,21 @@
 - Android (Java 기반)
 
 ### 🛠️ 주요 기술 스택
-- **WebRTC** (Kakao I Connect)
-- **Firebase Cloud Messaging (FCM)**
-- **FFmpeg** (영상 및 음성 편집/합성)
-- **GPS 위치 공유 및 주소 변환**
+- **WebRTC (Kakao I Connect SDK)** – 영상 통화 및 녹화 처리
+- **Firebase Cloud Messaging (FCM)** – 실시간 알림 및 토큰 관리
+- **FFmpeg (Mobile-FFmpeg)** – 영상 + 음성 합성 처리
+- **LocationManager + Geocoder** – GPS 위치 수신 및 주소 변환
+- **MediaRecorder / MediaPlayer** – 음성 녹음 및 재생
 
 ### 🧩 구성 요소
-- 로그인 및 회원 관리 시스템
-- 촬영 모드 (사진, 영상 통화 및 녹화)
-- 위치 모드 (사진 및 위치 전송, 음성 녹음)
-- 사이드 메뉴 (회원정보 및 수신인 관리)
-- 설정 메뉴 (촬영 및 위치 모드 설정)
+- LoginActivity / SignupActivity – 회원 로그인 및 가입
+- MainActivity – 탭 및 DrawerLayout 기반 메인 구조
+- CameraFragment – 사진 촬영 기능 (Intent 및 저장)
+- VideoCallFragment – WebRTC 영상통화
+- LocationFragment – GPS + 음성 녹음 + 위치 전송
+- SettingsActivity – 수신자 설정 및 사용자 정보 수정
+- FCMService.java – FCM 수신 및 알림 처리
+- UploadService.java – 영상/음성 파일 업로드 및 응답 처리
 
 ---
 
@@ -30,67 +34,70 @@
 
 | 항목 | 방식 | 설명 |
 |------|------|------|
-| **개발 환경** | Android Studio, Java | Android 앱 개발에 최적화된 IDE 사용 |
-| **버전 관리** | Git + GitHub | 커밋 → 푸시 → 백업 및 협업 |
-| **설계 방법** | 기능 단위 모듈 분리 | 로그인, 위치 전송, 영상 통화 등 |
-| **UI 개발** | XML + Activity 기반 | MVVM 없이 액티비티 중심 구조 |
-| **화면 구성 방식** | 탭 레이아웃 + 사이드 메뉴 | 하단 탭으로 촬영/위치 모드 이동, Drawer 메뉴로 수신인/설정 진입 |
-| **UI 요소 구성** | FrameLayout + Fragment | 탭 간 화면 전환은 Fragment로 관리 |
-| **통신 방식** | WebRTC, FCM, HTTP | 실시간 영상 및 알림 처리 |
-| **미디어 처리** | FFmpeg 사용 | 영상 + 음성 합성 및 저장 |
-| **보안 고려** | 퍼미션 체크 | 위치 권한, 카메라, 마이크 권한 등 |
-| **테스트 방식** | 실기기 수동 테스트 | 알림/위치 오차/영상 품질 확인 |
-| **알림 시스템** | FCM + MMS 연동 | 수신자에게 즉시 전송 처리 |
+| **개발 환경** | Android Studio (Java 1.8), Gradle | gradle 7.x, minSdk 24 기준 |
+| **버전 관리** | Git + GitHub | Git CLI 사용, 단일 main 브랜치 운영 |
+| **설계 방법** | 모듈 기반 액티비티-프래그먼트 구조 | MainActivity 기준 탭 이동 처리 |
+| **UI 개발** | XML + FragmentManager | BottomNavigationView + Fragment 교체 |
+| **탭 구성 방식** | BottomNavigationView (`activity_main.xml`) | Camera, VideoCall, Location 탭으로 구성 |
+| **사이드메뉴** | DrawerLayout + NavigationView | 수신자 설정, 개인정보 진입 |
+| **알림 방식** | `FirebaseMessagingService` 상속 | `onMessageReceived()` override |
+| **영상 처리** | `Camera Intent` + WebRTC + FFmpeg | 영상 통화 후 `onPeerLeft()`에서 자동 저장 |
+| **음성 녹음** | `MediaRecorder` → `.m4a` 저장 | `startRecording()`, `stopRecording()` 직접 구현 |
+| **파일 업로드** | `HttpURLConnection` + POST multipart | 서버 업로드 후 응답 처리 |
+| **위치 수신** | `LocationManager` + `Geocoder` | 실시간 위치와 주소 표시 |
+| **보안 처리** | 권한 요청 (`ActivityCompat.requestPermissions`) | 위치, 카메라, 마이크, 저장소 권한 필수 체크 |
 
 ---
 
-## 🧭 개발 순서
+## 🧭 개발 순서 (실제 구현 중심)
 
-### 1. 프로젝트 세팅
-- Android Studio 프로젝트 생성
-- 탭 구조 레이아웃 기획: 촬영 모드 / 위치 모드 탭 구성
-- Firebase 연동: 프로젝트 등록, FCM 테스트
+### 1. 프로젝트 초기화 및 Gradle 설정
+- Firebase SDK, WebRTC SDK, Mobile-FFmpeg 의존성 추가
+- `AndroidManifest.xml`에 필수 권한 선언 (CAMERA, RECORD_AUDIO, ACCESS_FINE_LOCATION 등)
 
-### 2. 회원 시스템 구현
-- 로그인 / 회원가입 화면 구성
-- 자동 로그인 및 사용자 인증 처리
-- 사용자 정보 저장 방식: SharedPreferences 활용
+### 2. 로그인 및 회원가입 구현
+- `LoginActivity.java`, `SignupActivity.java` 작성
+- `SharedPreferences`로 자동 로그인 상태 유지
+- Retrofit 없이 간단한 로그인 로직 (FirebaseAuth 연동 가능)
 
-### 3. 탭 기반 화면 구조 설계
-- 하단 탭 (BottomNavigationView) 기반 화면 전환
-- 탭 간 Fragment로 구성
-  - 촬영모드Fragment
-  - 위치모드Fragment
+### 3. 탭 레이아웃 및 프래그먼트 연결
+- `activity_main.xml` 내 `BottomNavigationView` 선언
+- `MainActivity.java` → `replaceFragment()` 함수로 각 프래그먼트 연결
 
-### 4. 촬영 모드 기능 개발
-- 사진 촬영 및 저장
-- WebRTC 영상 통화 연동 (Kakao SDK 활용)
-- 영상 저장 및 서버 업로드
-- FFmpeg 기반 영상/음성 합성
-- 전송 성공 시 FCM 또는 MMS 전송
+```java
+private void replaceFragment(Fragment fragment) {
+    getSupportFragmentManager().beginTransaction()
+        .replace(R.id.main_frame, fragment)
+        .commit();
+}
+```
 
-### 5. 위치 모드 기능 개발
-- GPS 기반 현재 위치 수신
-- 주소 변환 (Geocoder)
-- 위치 + 사진 전송
-- 음성 녹음 및 서버 업로드
-- 긴급전화 기능 구현
+### 4. 촬영 모드 (CameraFragment)
+- 사진 촬영: `Intent(MediaStore.ACTION_IMAGE_CAPTURE)`
+- 영상 통화: `VideoCallFragment` + Kakao I WebRTC SDK
+- 영상 녹화: WebRTC 종료 시 저장 (`onPeerLeft()` 내부)
+- 영상 업로드: `UploadService.java`에서 파일 전송
 
-### 6. 사이드 메뉴 및 설정 구성
-- DrawerLayout 기반 사이드 메뉴 구성
-- 수신인 목록 관리 (추가/삭제/설정)
-- 촬영/위치 모드 설정 저장 (토글 스위치)
-- 사용자 정보 수정 Activity 구성
+### 5. 위치 모드 (LocationFragment)
+- `LocationManager.requestLocationUpdates()`로 실시간 GPS 수신
+- `Geocoder`로 주소 텍스트 변환
+- `MediaRecorder`로 음성 녹음 `.m4a` 생성
+- `Intent.ACTION_CALL`로 긴급 번호 연결
 
-### 7. 알림 시스템 연동
-- Firebase Cloud Messaging 연동
-- 백엔드 호출 → 수신자 푸시 알림 발송
-- MMS 연동 구현 (문자 API 또는 Intent 활용)
+### 6. 사이드 메뉴 및 설정 페이지
+- `NavigationView`로 메뉴 전환
+- 수신인 추가/삭제 기능 → SQLite or JSON 저장
+- 설정화면: `SettingsActivity`에서 SwitchCompat로 모드 설정 저장
 
-### 8. 종합 테스트 및 배포
-- 실기기 테스트 (Android 10 이상 기준)
-- 다양한 상황별 테스트: 통화, 네트워크 지연, 알림 지연
-- APK 빌드 및 배포 (수동 설치 또는 내부 배포 도구 활용)
+### 7. 알림 처리 (FCMService)
+- `MyFirebaseMessagingService` extends `FirebaseMessagingService`
+- `onMessageReceived()`에서 알림 도착 시 Notification 출력
+- 백그라운드 수신 및 디바이스별 토큰 저장
+
+### 8. 테스트 및 배포
+- Android 10 이상 디바이스로 실기기 테스트
+- 네트워크 지연 상황에서 영상/음성/위치 전송 시나리오별 QA
+- APK 파일 내장 서명 후 배포 (ADB push, 내부 웹 배포 가능)
 
 ---
 
@@ -98,8 +105,9 @@
 
 | 영역 | 개선 방안 |
 |------|-----------|
-| 상태관리 | ViewModel, LiveData 도입 가능 |
-| UI 구조 | Jetpack Compose 도입 고려 |
-| 보안 | 영상 및 위치 암호화, 인증 토큰 강화 |
-| UX | 영상 종료 후 피드백 또는 로그 저장 |
-| 관리자 연동 | 수신자용 웹 대시보드 연동 가능 |
+| 상태관리 | ViewModel + LiveData 구조 적용 |
+| UI 구조 | Jetpack Compose 도입 가능 |
+| 보안 | HTTPS 업로드, Firebase Auth 토큰 인증 추가 |
+| UX | 알림 히스토리 저장, 상황 로그 서버 전송 |
+| 관리자 연동 | 수신자용 웹 대시보드 (React + Firebase) 구성 |
+
