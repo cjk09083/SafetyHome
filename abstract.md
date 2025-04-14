@@ -43,14 +43,20 @@
 
 ## ⚙️ 작업 방식
 
-| 구분 | 설명 |
-|------|------|
-| **디자인** | 사전 기획안을 바탕으로 Photoshop 에서 레이어 작업, 이후 png 이미지와 원본 psd 파일 개발과 공유|
-| **개발** | 기능별로 화면을 나누고, 각 화면에 필요한 기능을 독립적으로 구성<br>(예: 사진 촬영, 영상통화, 위치 전송 등) |
-| **기획** | 사용자 시나리오 기반으로 간단하고 빠르게 동작할 수 있도록 흐름 설계<br>위급한 상황을 가정해 최소한의 조작으로도 전송되도록 함 |
-| **저장 및 전송** | 기록된 사진/영상/위치/음성은 자동으로 서버 또는 보호자에게 전송되며, 알림도 함께 전송됨 |
-| **알림 처리** | 보호자는 푸시 알림 또는 문자로 바로 상황을 확인할 수 있음 |
-| **기록 병합** | 영상 통화와 별도로 녹음된 음성은 자동으로 하나의 파일로 합쳐져 전송됨 (사용자는 인식하지 못해도 무방함) |
+| 항목 | 방식 | 설명 |
+|------|------|------|
+| **작업 도구** | Android Studio | 모바일 앱 개발에 사용하는 대표적인 개발 환경 |
+| **기록 및 저장** | Git + GitHub | 작업 내용을 버전별로 관리하고 백업할 수 있는 도구 |
+| **기능 구성** | 화면 단위로 나눠 개발 | 각 기능(촬영, 위치, 통화 등)을 별도 화면으로 구성하고 연결 |
+| **화면 구성** | 버튼 + 메뉴 방식 | 주요 기능은 탭 버튼, 설정 등은 사이드 메뉴로 진입 |
+| **기능 전환 방식** | 하단 탭 메뉴 | 사용자 친화적으로 기능 이동이 가능하도록 구성 |
+| **사이드 메뉴** | 왼쪽에서 열리는 설정창 | 개인정보, 수신자 목록, 사용 설정 접근에 활용 |
+| **알림 전달** | 푸시 알림 또는 문자 메시지 | 보호자에게 상황 발생 즉시 알려줌 |
+| **영상 처리 방식** | 영상 + 음성 자동 저장 및 합성 | 영상통화 종료 시 자동으로 저장되고, 녹음한 음성과 하나로 병합 |
+| **음성 녹음** | 앱 내 녹음 기능 | 버튼을 누르면 자동 녹음되어 저장됨 |
+| **자료 전송 방식** | 서버로 자동 업로드 | 촬영한 사진, 영상 등은 자동으로 보호자에게 전달됨 |
+| **위치 수신** | 휴대폰 GPS 활용 | 현재 위치를 실시간으로 받아서 함께 전송함 |
+| **보안 기능** | 접근 권한 확인 | 위치, 마이크, 카메라 등 민감 정보 접근은 사용자 동의 필요 |
 
 ---
 
@@ -85,94 +91,12 @@
 
 ---
 
-## 🚀 작업 결과물
-### 1. 로그인 관련
- - 회원가입 및 로그인
-<div align="center" >
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/1.%20메인.jpeg" width="20%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/6.%20회원가입%20-%20약관동의.png" width="20%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/8.%20회원가입%20-%20정보%20입력.png" width="20%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/2.%20로그인.png" width="20%"/>
-</div></br>
+## 🚀 작업 스타일 공유
 
- - 아이디 찾기 & 비밀번호 찾기
- <!--
-<div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/3.%20아이디찾기.png" width="25%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/4.%20비밀번호%20찾기.png" width="25%"/>
-</div></br>
--->
-### 2. 촬영모드
- - 사진&문자 전송 (메인, 문자입력, 상단알람, 사진확인)
-<div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/10.%20촬영모드%20-%20메인.png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-2%20문자%20전송(입력).jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/4-3%20사진&문자&위치%20알람.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-7%20공유된%20사진%20확인.jpeg" width="23%"/>
-</div></br>
+| 역할 | 스타일 |
+|------|--------|
+| 기획자 | 기능보다 **흐름** 중심. 사용자가 최대한 빠르게 상황을 전달할 수 있도록 구성 |
+| 디자이너 | **가시성 + 직관성** 우선. 상황별 버튼/색상/문구에 의미 부여 |
+| 개발자 | **화면별 분리**를 기반으로 기능을 독립적으로 구성하고 자동화 중심 개발 |
+| 공통 | 반복 테스트를 통해 불필요한 절차 제거, 실제 위급한 상황에서도 사용 가능해야 함 |
 
- - 영상 통화 및 촬영 (메인, 영상통화, 상단알람, 영상확인)
-<div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/10.%20촬영모드%20-%20메인.png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-4%20영상%20통화%20화면.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-2%20영상%20공유%20알림.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/5-6%20녹화된%20영상%20확인.jpeg" width="23%"/>
-</div></br>
-
-### 3. 위치모드
-- 사진 & 위치 전송
-- 음성녹음 
-<div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/19.%20위치모드.png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-3%20음성%20녹음.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-4%20음성%20전송.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-6%20음성%20확인.jpeg" width="23%"/>
-</div></br>
-
-- 긴급전화
-<div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/19.%20위치모드.png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-8%20긴급%20전화연결.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-9%20긴급%20전화연결%20호출중.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/6-10%20긴급%20전화연결중.jpeg" width="23%"/>
-</div></br>
-
-### 4. 사이드
-- 회원정보 & 수신인 변경 : 회원정보변경(상단,하단), 수신인 (신규등록, 정보변경)
-<div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-1%20회원정보%20변경%20(상단).jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-2%20회원정보%20변경%20(하단).jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-3%20수신인%20신규%20등록.jpeg" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/real/3-4%20수신인%20정보%20변경.jpeg" width="23%"/>
-</div></br>
-
-### 5. 설정
-- 촬영모드 & 위치모드 설정 : 촬영모드 설정(일반, GPS), 위치모드 설정(일반, GPS) 
-<div align="center">
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/49%20촬영모드%20설정.png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/50%20촬영모드%20설정(GPS).png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/51%20위치모드%20설정.png" width="23%"/>
-&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/cjk09083/SafetyHome/blob/main/ScreenShot/52%20위치모드%20설정(GPS).png" width="23%"/>
-</div></br>
