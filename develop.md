@@ -76,8 +76,6 @@ MyFirebaseMessagingService
    └── 수신자 앱 → 푸시 알림 수신 → Notification 표시
 ```
 
----
-
 위 연계 구조는 실제 Activity와 Fragment 흐름에 맞춰 설계되었으며, 사용자가 앱을 시작해 긴급상황을 알릴 때까지의 전체 흐름을 포함합니다.
 
 ---
