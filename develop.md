@@ -18,11 +18,9 @@
 - **LocationManager + Geocoder** – GPS 위치 수신 및 주소 변환
 - **MediaRecorder / MediaPlayer** – 음성 녹음 및 재생
 
----
+### 🖥️ 페이지 구성 
 
-## 🖥️ 화면 구성 목록
-
-| 화면 명칭 | 설명 |
+| 페이지 명칭 | 설명 |
 |-----------|------|
 | `SplashActivity` | 앱 로딩 및 자동 로그인 확인 |
 | `LoginActivity` | 사용자 로그인 |
@@ -37,9 +35,7 @@
 | `UploadService.java` | 백그라운드 파일 업로드 처리 |
 | `MyFirebaseMessagingService.java` | 푸시 알림 수신 처리 |
 
----
-
-## 🔄 화면 간 연계 구조
+### 🔄 페이지 간 연계 구조
 
 ```
 SplashActivity
